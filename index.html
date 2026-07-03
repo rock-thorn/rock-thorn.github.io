@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jake Thornock, PhD</title>
+<style>
+  :root{
+    --navy:#002E5D; --navy-soft:#0a3d73; --accent:#c8102e;
+    --ink:#1a1a1a; --muted:#5a6472; --line:#e4e7ec; --bg:#ffffff; --panel:#f7f8fa;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg);line-height:1.6;}
+  header.site{background:var(--navy);color:#fff;padding:26px 24px 0;}
+  .brand{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;}
+  .brand h1{font-size:1.7rem;margin:0;font-weight:600;letter-spacing:.3px;}
+  .brand .role{color:#c9d6e6;font-size:.98rem;font-style:italic;}
+  nav{max-width:1000px;margin:16px auto 0;display:flex;flex-wrap:wrap;gap:2px;}
+  nav a{color:#dbe4ef;text-decoration:none;padding:10px 14px;font-family:Arial,Helvetica,sans-serif;font-size:.82rem;letter-spacing:.6px;text-transform:uppercase;border-bottom:3px solid transparent;cursor:pointer;}
+  nav a:hover{color:#fff;}
+  nav a.active{color:#fff;border-bottom-color:var(--accent);}
+  main{max-width:1000px;margin:0 auto;padding:38px 24px 70px;}
+  .page{display:none;}
+  .page.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+  h2{color:var(--navy);font-size:1.5rem;border-bottom:2px solid var(--line);padding-bottom:8px;margin-top:0;}
+  h3{color:var(--navy-soft);font-size:1.12rem;margin:26px 0 8px;}
+  a{color:var(--accent);}
+  .lead{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start;}
+  .photo{flex:0 0 210px;}
+  .photo .ph{width:210px;height:250px;border:2px dashed #b9c2cf;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-family:Arial,sans-serif;font-size:.78rem;padding:12px;background:var(--panel);}
+  .lead .bio{flex:1;min-width:280px;}
+  .links-row{margin-top:14px;font-family:Arial,sans-serif;font-size:.85rem;}
+  .links-row a{display:inline-block;margin:4px 14px 4px 0;text-decoration:none;}
+  .pubyear{font-family:Arial,sans-serif;font-weight:bold;color:var(--muted);font-size:.8rem;letter-spacing:1px;margin-top:22px;text-transform:uppercase;}
+  ul.pubs{list-style:none;padding:0;margin:6px 0;}
+  ul.pubs li{padding:9px 0;border-bottom:1px solid var(--line);}
+  .venue{font-style:italic;color:var(--muted);}
+  .award{display:inline-block;background:#fbeaec;color:var(--accent);font-family:Arial,sans-serif;font-size:.72rem;padding:1px 7px;border-radius:3px;margin-left:6px;}
+  table.tw{width:100%;border-collapse:collapse;font-size:.95rem;}
+  table.tw td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top;}
+  table.tw td.r{text-align:right;color:var(--navy);font-weight:bold;white-space:nowrap;font-family:Arial,sans-serif;}
+  .card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:5px;padding:16px 20px;margin:16px 0;}
+  .btn{display:inline-block;background:var(--navy);color:#fff !important;text-decoration:none;padding:11px 22px;border-radius:5px;font-family:Arial,sans-serif;font-size:.9rem;}
+  .note{background:#fff8e1;border:1px solid #f0d98a;border-radius:5px;padding:12px 16px;font-family:Arial,sans-serif;font-size:.82rem;color:#6b5a1f;}
+  .contact-grid{display:grid;grid-template-columns:120px 1fr;gap:8px 18px;font-size:.98rem;margin-top:10px;}
+  .contact-grid div:nth-child(odd){color:var(--muted);font-family:Arial,sans-serif;font-size:.85rem;padding-top:2px;}
+  footer{max-width:1000px;margin:0 auto;padding:22px 24px;color:var(--muted);font-family:Arial,sans-serif;font-size:.78rem;border-top:1px solid var(--line);}
+  .tag{color:var(--accent);font-family:Arial,sans-serif;font-size:.7rem;}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="brand">
+    <h1>Jake Thornock</h1>
+    <span class="role">John W. &amp; Nancy S. Hardy Chaired Professor of Accounting &middot; BYU Marriott</span>
+  </div>
+  <nav id="nav">
+    <a data-p="home" class="active">Home</a>
+    <a data-p="about">About</a>
+    <a data-p="research">Research</a>
+    <a data-p="books">Books</a>
+    <a data-p="teaching">Teaching</a>
+    <a data-p="ventures">Ventures</a>
+    <a data-p="cv">CV</a>
+    <a data-p="contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section class="page active" id="home">
+    <div class="lead">
+      <div class="photo">
+        <img src="thornock-headshot-web.jpg" alt="Jake Thornock" style="width:210px;border-radius:6px;display:block;box-shadow:0 2px 10px rgba(0,0,0,.15);">
+      </div>
+      <div class="bio">
+        <p>Jake Thornock is the <strong>John W. and Nancy S. Hardy Chaired Professor of Accounting</strong> at the Marriott School of Business, Brigham Young University, where he also serves as Associate Director of the Executive MBA program.</p>
+        <p>His research examines how information intermediaries, investor attention, and corporate disclosure shape capital markets, along with the causes and consequences of corporate tax avoidance. His work has appeared in the <em>Journal of Finance</em>, the <em>Journal of Financial Economics</em>, the <em>Journal of Accounting Research</em>, the <em>Journal of Accounting and Economics</em>, <em>The Accounting Review</em>, and <em>Management Science</em>, among others.</p>
+        <p>Before joining BYU, he was a tenured member of the accounting faculty at the University of Washington's Foster School of Business. He earned his PhD in Accounting from the University of North Carolina at Chapel Hill and his MAcc and BS from Brigham Young University.</p>
+        <div class="links-row">
+          <a href="https://www.linkedin.com/in/jake-thornock/">LinkedIn</a>
+          <a href="#" data-p="cv">CV (PDF)</a>
+          <a href="https://scholar.google.com/citations?user=_FRivYwAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=914664">SSRN</a>
+          <a href="https://marriott.byu.edu/directory/details?id=5792">BYU Faculty Page</a>
+          <a href="mailto:thornock@byu.edu">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page" id="about">
+    <h2>About</h2>
+    <p>Jake Thornock studies information intermediaries, investor attention, disclosure, and corporate taxation. His research asks how information flows to and through capital markets — via the internet, social media, financial statement users, and short sellers — and how firms and investors respond. A second stream examines the determinants and real effects of corporate tax avoidance.</p>
+
+    <h3>Academic Appointments</h3>
+    <table class="tw">
+      <tr><td>Associate Director, Executive MBA &mdash; BYU Marriott</td><td class="r">2025 &ndash; present</td></tr>
+      <tr><td>Professor of Accounting &mdash; BYU Marriott</td><td class="r">2019 &ndash; present</td></tr>
+      <tr><td>John W. &amp; Nancy S. Hardy Chaired Professorship</td><td class="r">2019 &ndash; present</td></tr>
+      <tr><td>Academic Fellow, UNC Tax Center</td><td class="r">2019 &ndash; present</td></tr>
+      <tr><td>Associate Professor of Accounting &mdash; BYU Marriott</td><td class="r">2016 &ndash; 2019</td></tr>
+      <tr><td>Associate Professor (with tenure) &mdash; UW Foster</td><td class="r">2014 &ndash; 2016</td></tr>
+      <tr><td>Assistant Professor of Accounting &mdash; UW Foster</td><td class="r">2010 &ndash; 2014</td></tr>
+    </table>
+
+    <h3>Education</h3>
+    <table class="tw">
+      <tr><td>PhD, Accounting &mdash; University of North Carolina at Chapel Hill, Kenan-Flagler</td><td class="r">2010</td></tr>
+      <tr><td>MAcc &amp; BS, Accounting &mdash; Brigham Young University, Marriott</td><td class="r">2006</td></tr>
+    </table>
+
+    <h3>Selected Awards &amp; Honors</h3>
+    <ul class="pubs">
+      <li>ATA Best Manuscript Award (2026) &mdash; <em>Tax Boycotts</em></li>
+      <li>Karl G. Maeser Research Award (2022) &mdash; <span class="venue">highest university-wide research award at BYU</span></li>
+      <li>BYU School of Accountancy Excellence Award (2021)</li>
+      <li>AAA FARS Best Paper Award (2019) &amp; Outstanding Discussion Award (2021)</li>
+      <li>Marriott School Outstanding Researcher Award (2019)</li>
+      <li>Accounting Horizons Best Paper Award (2018)</li>
+      <li>Andrew V. Smith Award for Excellence in Research, UW Foster (2015)</li>
+    </ul>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="page" id="research">
+    <h2>Research</h2>
+    <p>Selected and recent publications. A complete list, including awards and citations, is on the <a href="https://scholar.google.com/citations?user=_FRivYwAAAAJ&hl=en">Google Scholar</a> and <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=914664">SSRN</a> pages, and in the <a href="#" data-p="cv">CV</a>.</p>
+
+    <div class="pubyear">Forthcoming</div>
+    <ul class="pubs">
+      <li>Predicting Anomalies <span class="venue">(with Bowles, Reed, Ringgenberg)</span> &mdash; <em>Journal of Financial Economics</em></li>
+      <li>Influencers as Information Intermediaries <span class="venue">(with Campbell, Drake, Twedt)</span> &mdash; <em>Review of Accounting Studies</em></li>
+      <li>Explaining Corporate Tax Avoidance <span class="venue">(with Belnap, Kroeger)</span> &mdash; <em>Management Science</em></li>
+      <li>Social Tax Discontent <span class="venue">(with Belnap, Standridge, Williams)</span> &mdash; <em>The Accounting Review</em></li>
+    </ul>
+
+    <div class="pubyear">2024</div>
+    <ul class="pubs">
+      <li>Anomaly Time <span class="venue">(with Bowles, Reed, Ringgenberg)</span> &mdash; <em>Journal of Finance</em>, 79(5): 3543&ndash;3579</li>
+      <li>Tax Boycotts <span class="venue">(with Asay, Hoopes, Wilde)</span> &mdash; <em>The Accounting Review</em>, 99(1): 1&ndash;29 <span class="award">ATA Best Manuscript 2026</span></li>
+      <li>Hidden Wealth and Automatic Information Sharing <span class="venue">(with Belnap, Williams)</span> &mdash; <em>Journal of Law and Economics</em>, 67(4): 905&ndash;949</li>
+    </ul>
+
+    <div class="pubyear">2023</div>
+    <ul class="pubs">
+      <li>Earnings Virality <span class="venue">(with Campbell, Drake, Twedt)</span> &mdash; <em>Journal of Accounting and Economics</em>, 75(1): 101517</li>
+    </ul>
+
+    <div class="pubyear">2020</div>
+    <ul class="pubs">
+      <li>Inter-firm Information Flows and Corporate Investment <span class="venue">(with Bernard, Blackburne)</span> &mdash; <em>Journal of Financial Economics</em>, 136(2): 760&ndash;779</li>
+      <li>Is There Information Content in Information Acquisition? <span class="venue">(with Drake, Johnson, Roulstone)</span> &mdash; <em>The Accounting Review</em>, 95(2): 113&ndash;139</li>
+    </ul>
+
+    <div class="pubyear">2017</div>
+    <ul class="pubs">
+      <li>IRS Attention <span class="venue">(with Bozanic, Hoopes, Williams)</span> &mdash; <em>Journal of Accounting Research</em>, 55: 79&ndash;114</li>
+      <li>Changes in Corporate Effective Tax Rates Over 25 Years <span class="venue">(with Dyreng, Hanlon, Maydew)</span> &mdash; <em>Journal of Financial Economics</em>, 124: 441&ndash;463</li>
+      <li>The Comovement of Investor Attention <span class="venue">(with Drake, Jennings, Roulstone)</span> &mdash; <em>Management Science</em>, 63: 2847&ndash;2867</li>
+      <li>Who Uses Financial Statements? <span class="venue">(with Drake, Quinn)</span> &mdash; <em>Accounting Horizons</em>, 31: 55&ndash;68 <span class="award">Best Paper 2017</span></li>
+      <li>The Internet as an Information Intermediary <span class="venue">(with Drake, Twedt)</span> &mdash; <em>Review of Accounting Studies</em>, 22: 543&ndash;576</li>
+      <li>An Examination of Firms' Responses to Tax Forgiveness <span class="venue">(with Shevlin, Williams)</span> &mdash; <em>Review of Accounting Studies</em>, 22: 577&ndash;607</li>
+    </ul>
+
+    <div class="pubyear">2012 &ndash; 2016</div>
+    <ul class="pubs">
+      <li>Taking the Long Way Home: U.S. Tax Evasion and Offshore Investments <span class="venue">(with Hanlon, Maydew)</span> &mdash; <em>Journal of Finance</em> (2015), 70: 257&ndash;287</li>
+      <li>The Usefulness of Historical Accounting Reports <span class="venue">(with Drake, Roulstone)</span> &mdash; <em>Journal of Accounting and Economics</em> (2016), 61: 448&ndash;464</li>
+      <li>Market (In)attention and the Timing of Earnings Announcements <span class="venue">(with deHaan, Shevlin)</span> &mdash; <em>Journal of Accounting and Economics</em> (2015), 60: 36&ndash;55</li>
+      <li>Exploring the Role that Delaware Plays as a Domestic Tax Haven <span class="venue">(with Dyreng, Lindsey)</span> &mdash; <em>Journal of Financial Economics</em> (2013), 108: 751&ndash;772</li>
+      <li>The Effects of Dividend Taxation on Short Selling and Market Quality <span class="venue">(dissertation)</span> &mdash; <em>The Accounting Review</em> (2013), 88: 1833&ndash;1856</li>
+      <li>Investor Information Demand: Evidence from Google Searches <span class="venue">(with Drake, Roulstone)</span> &mdash; <em>Journal of Accounting Research</em> (2012), 50: 1001&ndash;1040</li>
+      <li>The Information Content of Annual Earnings Announcements and IFRS Adoption <span class="venue">(with Maydew, Landsman)</span> &mdash; <em>Journal of Accounting and Economics</em> (2012), 53: 34&ndash;54</li>
+    </ul>
+    <p style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--muted);">Full publication list (25+ articles) in the CV.</p>
+
+    <h3>Working Papers</h3>
+    <ul class="pubs">
+      <li>The (In)adequacy of Legal Contingency Reporting <span class="venue">(with Allen, Standridge)</span> &mdash; 3rd round, <em>Review of Accounting Studies</em></li>
+      <li>Measuring Multinationality <span class="venue">(with Fox, Judd, Kerr)</span></li>
+      <li>Social Media Algorithms as Information Intermediaries <span class="venue">(with Drake, Koenraadt, Twedt)</span></li>
+      <li>Refreshing Factors <span class="venue">(with Bowles, Reed, Ringgenberg)</span></li>
+    </ul>
+  </section>
+
+  <!-- BOOKS -->
+  <section class="page" id="books">
+    <h2>Books</h2>
+    <p>Textbooks co-authored with Wayne Thomas, Mike Drake, and David Spiceland, published by McGraw-Hill.</p>
+    <div class="card">
+      <h3 style="margin-top:0;">Financial Accounting for Managers <span class="tag">3rd Edition &middot; expected 2026</span></h3>
+      <p style="margin:0;">with Wayne Thomas, Mike Drake &amp; David Spiceland &mdash; McGraw-Hill</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Managerial Accounting for Managers <span class="tag">expected 2026</span></h3>
+      <p style="margin:0;">with Wayne Thomas &amp; Mike Drake &mdash; McGraw-Hill</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Financial and Managerial Accounting for Managers <span class="tag">expected 2026</span></h3>
+      <p style="margin:0;">with Wayne Thomas &amp; Mike Drake &mdash; McGraw-Hill</p>
+    </div>
+    <p class="note">Add McGraw-Hill product/catalog links for each title when available.</p>
+  </section>
+
+  <!-- TEACHING -->
+  <section class="page" id="teaching">
+    <h2>Teaching</h2>
+    <p>Median student ratings shown at right.</p>
+    <h3>Brigham Young University</h3>
+    <table class="tw">
+      <tr><td>Corporate Financial Reporting &mdash; EMBA 504 (2018&ndash;2025)</td><td class="r">7.9 / 8.0</td></tr>
+      <tr><td>Corporate Financial Reporting &mdash; MBA 501 (2025)</td><td class="r">4.9 / 5.0</td></tr>
+      <tr><td>BYU Foundations for Student Success &mdash; UNIV 101 (2024&ndash;2025)</td><td class="r">4.9 / 5.0</td></tr>
+      <tr><td>Principles of Accounting 2 &mdash; ACC 310 (2022&ndash;2025)</td><td class="r">4.8 / 5.0</td></tr>
+      <tr><td>Financial Statement Analytics &mdash; ACC 440 (2019&ndash;2021)</td><td class="r">4.8 / 5.0</td></tr>
+      <tr><td>Financial Statement Analysis &mdash; EMBA 693R (2019&ndash;2020)</td><td class="r">7.9 / 8.0</td></tr>
+    </table>
+    <h3>University of Washington</h3>
+    <table class="tw">
+      <tr><td>Intermediate Accounting III &mdash; ACCTG 303/505/507A (2010&ndash;2016)</td><td class="r">4.8 / 5.0</td></tr>
+      <tr><td>Accounting for Intercollegiate Athletics &mdash; ACCTG 560 (2014&ndash;2019)</td><td class="r">4.8 / 5.0</td></tr>
+    </table>
+    <h3>PhD Student Mentoring</h3>
+    <p>Pre-doctoral advisor and dissertation committee member for students placed at institutions including MIT, Yale, Duke, UNC, USC, Wisconsin, Georgia, and the University of British Columbia.</p>
+  </section>
+
+  <!-- VENTURES -->
+  <section class="page" id="ventures">
+    <h2>Ventures &amp; Consulting</h2>
+    <div class="card">
+      <h3 style="margin-top:0;">Accounting Coding Camp <span class="tag">Co-Founder &middot; 2020&ndash;present</span></h3>
+      <p style="margin:0 0 10px;">Training that brings data and coding skills to accounting students and professionals.</p>
+      <a class="btn" href="https://accountingcodingcamp.com">Visit accountingcodingcamp.com</a>
+    </div>
+    <h3>Other Professional Experience</h3>
+    <table class="tw">
+      <tr><td>Academic Trainer, Bounce LLP (for Goldman Sachs)</td><td class="r">2017 &ndash; 2024</td></tr>
+      <tr><td>Academic Advisor, SECLive.com</td><td class="r">2014 &ndash; 2018</td></tr>
+    </table>
+    <h3>Editorial &amp; Service</h3>
+    <p>Editor, <em>Contemporary Accounting Research</em> (2017&ndash;2025). Editorial boards of the <em>Journal of Accounting and Economics</em>, <em>Contemporary Accounting Research</em>, and <em>The Accounting Review</em>.</p>
+  </section>
+
+  <!-- CV -->
+  <section class="page" id="cv">
+    <h2>Curriculum Vitae</h2>
+    <p>Full CV, updated June 2026.</p>
+    <p><a class="btn" href="Thornock_CV.pdf">Download CV (PDF)</a></p>
+    <p class="note">On the live Google Site the CV will be attached as a downloadable file / embedded PDF.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div>Email</div><div><a href="mailto:thornock@byu.edu">thornock@byu.edu</a></div>
+      <div>Office</div><div>526 Tanner Building, Marriott School of Business, Brigham Young University, Provo, UT 84602</div>
+      <div>Phone</div><div>801-422-0828</div>
+      <div>LinkedIn</div><div><a href="https://www.linkedin.com/in/jake-thornock/">linkedin.com/in/jake-thornock</a></div>
+      <div>Scholar</div><div><a href="https://scholar.google.com/citations?user=_FRivYwAAAAJ&hl=en">Google Scholar profile</a></div>
+      <div>SSRN</div><div><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=914664">SSRN author page</a></div>
+      <div>BYU</div><div><a href="https://marriott.byu.edu/directory/details?id=5792">Marriott faculty page</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Jake Thornock &middot; Marriott School of Business, Brigham Young University &middot; Preview build
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  function show(p){
+    document.querySelectorAll('.page').forEach(s=>s.classList.toggle('active',s.id===p));
+    document.querySelectorAll('#nav a')
